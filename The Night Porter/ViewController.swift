@@ -10,16 +10,23 @@ import UIKit // core network for any iOS application
 
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
+    /*
+     IB Interface Builder
+     Outlet: from code to .storyboard (XCODE property)
+     . 'weak' attribute beacouse this label object it's not own by the ViewController class, we are non responsable to instantiating the label object and taking care of its lifecicle. Label object it's instantiate by .storyboard and it owns the lifecicle. We need just a reference to give a name (modelLabel)
+     . '!' optional
+     */
     @IBOutlet weak var modeLabel: UILabel!
     
+    //Action: from .storyboard to code (XCODE method)
     @IBAction func changeBackground(_ sender: Any) {
-        
+       
         modeLabel.text = "Mode: Dark"
         
         // "view" acts as container of the application, top-level view object that contains subviews: Label, button ecc
@@ -50,6 +57,7 @@ class ViewController: UIViewController {
         */
         
         // MVC Model (data) View (presentation/interaction) Controller (logics between Model and View)
+        
         
     }
 }
