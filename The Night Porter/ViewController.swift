@@ -9,7 +9,17 @@
 import UIKit // core network for any iOS application
 
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = "Thi is cell for \(indexPath.row)" // '?' because default cell does have textLabel but it is defined as optiona, so we use '?' to unwrap
+        return cell
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +68,14 @@ class ViewController: UIViewController {
         
         // MVC Model (data) View (presentation/interaction) Controller (logics between Model and View)
         
+        /*
+         iOS Table View
+         . it is a view object
+         . it is a one column wide vith multiple rows
+         . every row has single cell that contains the content (eg. view labels ecc)
+         
+         
+         */
         
     }
 }
