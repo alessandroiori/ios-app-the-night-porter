@@ -11,7 +11,7 @@ import UIKit // core network for any iOS application
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    let dailyTasks = ["AAAAA", "BBBBB", "CCCCC"]
+    let dailyTasks = ["AAAAA", "BBBBB", "CCCCC", "DDDDD", "FFFFFFF", "GGGGGGG"]
     let weeklyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     let monthlyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     
@@ -49,15 +49,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        /*
-        cell.textLabel?.text = "Thi is cell for \(indexPath.row)" // '?' because default cell does have textLabel but it is defined as optiona, so we use '?' to unwrap
-        return cell
-         */
         
+        // Instantiate new Table View Cell
+        //let cell = UITableViewCell()
+        
+        /*
+        if we have a 10000 row is inefficient instantiate every time a new new cell. It's possible reuse iOS Table View Cell non used (that not appear on the screen)
+        
+        identifier because TableView can have different tipe of reusable cell. We don't have differnt cell, so we identify them with "normalCell".
+        If there is no reusable cell, the method return a new cell instance.
+        We asking for a cell identifier "normalCell", TableView do not know this style/tyoe of cell. We must add this cell type on the storyboard. Storyboard > object library > Table View Cell > drag and drop inside Table View object (now there is a new subview under table view on the left) > select subview Table View Cell > open Atribute inspector > add "normalCell" as identifier field
+        
+        */
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
+    
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = dailyTasks[indexPath.row]
+            cell.textLabel?.text = dailyTasks[indexPath.row] // '?' because default cell does have textLabel but it is defined as optiona, so we use '?' to unwrap
         case 1:
             cell.textLabel?.text = weeklyTasks[indexPath.row]
         case 2:
