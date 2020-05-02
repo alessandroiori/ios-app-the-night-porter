@@ -9,7 +9,7 @@
 import UIKit // core network for any iOS application
 
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     let dailyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     let weeklyTasks = ["AAAAA", "BBBBB", "CCCCC"]
@@ -20,9 +20,15 @@ class ViewController: UIViewController, UITableViewDataSource {
      . it is a view object
      . it is a one column wide vith multiple rows
      . every row has single cell that contains the content (eg. view labels ecc)
-     . we use UITableViewDataSource Protocol
+     . we use UITableViewDataSource Protocol for manage section, row and cell content
+     . we use UITableViewDelegate Protocol for manage interactivity and apparence, used to delegate behavior or apparence
      
      */
+    
+    // Table View Delegate Methods
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Selected section: \(indexPath.section), row: \(indexPath.row)")
+    }
     
     // Table View Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
