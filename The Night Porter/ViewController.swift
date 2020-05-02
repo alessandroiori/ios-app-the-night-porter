@@ -16,7 +16,12 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var modeLabel: UILabel!
+    
     @IBAction func changeBackground(_ sender: Any) {
+        
+        modeLabel.text = "Mode: Dark"
+        
         // "view" acts as container of the application, top-level view object that contains subviews: Label, button ecc
         view.backgroundColor = UIColor.darkGray
         
@@ -43,6 +48,8 @@ class ViewController: UIViewController {
             label.textColor = UIColor.lightGray
         }
         */
+        
+        // MVC Model (data) View (presentation/interaction) Controller (logics between Model and View)
         
     }
 }
