@@ -10,22 +10,79 @@ import UIKit // core network for any iOS application
 
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
 class ViewController: UIViewController, UITableViewDataSource {
+    
+    let dailyTasks = ["AAAAA", "BBBBB", "CCCCC"]
+    let weeklyTasks = ["AAAAA", "BBBBB", "CCCCC"]
+    let monthlyTasks = ["AAAAA", "BBBBB", "CCCCC"]
+    
+    /*
+     iOS Table View
+     . it is a view object
+     . it is a one column wide vith multiple rows
+     . every row has single cell that contains the content (eg. view labels ecc)
+     . we use UITableViewDataSource Protocol
+     
+     */
+    
+    // Table View Data Source Methods
+    func numberOfSections(in tableView: UITableView) -> Int {
+         return 3 // one for dayly, one weekly and one for monthly
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
+        switch section {
+        case 0:
+            return dailyTasks.count
+        case 1:
+            return weeklyTasks.count
+        case 2:
+            return monthlyTasks.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        /*
         cell.textLabel?.text = "Thi is cell for \(indexPath.row)" // '?' because default cell does have textLabel but it is defined as optiona, so we use '?' to unwrap
+        return cell
+         */
+        
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = dailyTasks[indexPath.row]
+        case 1:
+            cell.textLabel?.text = weeklyTasks[indexPath.row]
+        case 2:
+            cell.textLabel?.text = monthlyTasks[indexPath.row]
+        default:
+            cell.textLabel?.text = "Error "
+        }
+        
         return cell
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Daily Tasks"
+        case 1:
+            return "Weekly Tasks"
+        case 2:
+            return "Monthly Tasks"
+        default:
+            return nil
+        }
     }
 
+    /*
+     MVC
+     Model (data)
+     View (presentation/interaction)
+     Controller (logics between Model and View)
+     */
+    
     /*
      IB Interface Builder
      Outlet: from code to .storyboard (XCODE property)
@@ -66,17 +123,11 @@ class ViewController: UIViewController, UITableViewDataSource {
         }
         */
         
-        // MVC Model (data) View (presentation/interaction) Controller (logics between Model and View)
-        
-        /*
-         iOS Table View
-         . it is a view object
-         . it is a one column wide vith multiple rows
-         . every row has single cell that contains the content (eg. view labels ecc)
-         
-         
-         */
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
     }
 }
 
