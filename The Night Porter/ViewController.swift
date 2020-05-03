@@ -11,26 +11,6 @@ import UIKit // core network for any iOS application
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    /* Multiple Scene
-     1. Create a new View Controller scene
-     2. Add new class to the project: SecondViewController with inherit from UIViewController
-     3. connect the firs scene with the second
-     
-     click on view controller > Library ('+') > drag and drop 'View Controller' inside Mian.board (main)
-     
-     Create new swit class for new scene
-     File > new > File.. > Cocoa Touch Class > Name: 'SecondViewClass', Subclas of: 'UIViewController' > create
-     
-     Connect new View Controller Scene (.storyboard) to SecondViewScene
-     Main.storyboard > click on new View Controller Scene > Show Inspectors > click identity inspector > class: Second View Controller
-     
-     Connect scenes
-     1. Add button on first scene
-     2. ctrl + drag drop on second scene
-     3. Action schow
-     */
-    
-    
     let dailyTasks = ["AAAAA", "BBBBB", "CCCCC", "DDDDD", "FFFFFFF", "GGGGGGG"]
     let weeklyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     let monthlyTasks = ["AAAAA", "BBBBB", "CCCCC"]
@@ -178,6 +158,55 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        self.title = "First VC"
     }
+    
+    /*
+     Multiple Scene
+     1. Create a new View Controller scene
+     2. Add new class to the project: SecondViewController with inherit from UIViewController
+     3. connect the firs scene with the second
+     
+     click on view controller > Library ('+') > drag and drop 'View Controller' inside Mian.board (main)
+     
+     Create new swit class for new scene
+     File > new > File.. > Cocoa Touch Class > Name: 'SecondViewClass', Subclas of: 'UIViewController' > create
+     
+     Connect new View Controller Scene (.storyboard) to SecondViewScene
+     Main.storyboard > click on new View Controller Scene > Show Inspectors > click identity inspector > class: Second View Controller
+     
+     Connect scenes
+     1. Add button on first scene
+     2. ctrl + drag drop on second scene
+     3. Action schow
+     */
+    
+    /*
+     Navigation Bar
+     Each View Controller appear inside an UIWindows. When we change from the View Controller to the Second View Controller, the UIWindows content is replaced with the new View Controller.
+     Navigation bar is added inside UIWindows on the top. When we change the View Controller the content of UIWindows change but not the nav bar.
+     Add Navigation Bar:
+     Select the first View Controller > Editing > Embed In > Navigation Controller
+     */
+    
+    /*
+     TAB Bar
+     New project > Tabbed App or Library ('+') > tab bar
+    
+     Add new Third Scene
+     
+     1. Create new swit class for new scene
+     File > new > File.. > Cocoa Touch Class > Name: 'ThirdViewClass', Subclas of: 'UIViewController' > create
+     
+     2. Connect new View Controller Scene (.storyboard) to ThirdViewScene class
+     Main.storyboard > click on new View Controller Scene > Show Inspectors > click identity inspector > class: Third View Controller
+     
+     3. Show on the Tab bar the new scene
+     ctrl + Drad and drom from Tab Bar Controller to the new Third View Controller > Relationship Segue > view controllers
+     
+     Change properties of the third Tab Bar
+     Click on the tab bar of the third scene > Select Image and
+     
+     */
 }
 
