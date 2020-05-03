@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F46A5B79245F0B31002F7BE3 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46A5B78245F0B31002F7BE3 /* SecondViewController.swift */; };
 		F4BCA95A245C75C700D33306 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCA959245C75C700D33306 /* AppDelegate.swift */; };
 		F4BCA95C245C75C700D33306 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCA95B245C75C700D33306 /* SceneDelegate.swift */; };
 		F4BCA95E245C75C700D33306 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4BCA95D245C75C700D33306 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F46A5B78245F0B31002F7BE3 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		F4BCA956245C75C700D33306 /* The Night Porter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The Night Porter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4BCA959245C75C700D33306 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4BCA95B245C75C700D33306 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				F4BCA95B245C75C700D33306 /* SceneDelegate.swift */,
 				F4BCA95D245C75C700D33306 /* ViewController.swift */,
 				F4BCA95F245C75C700D33306 /* Main.storyboard */,
+				F46A5B78245F0B31002F7BE3 /* SecondViewController.swift */,
 				F4BCA962245C75C800D33306 /* Assets.xcassets */,
 				F4BCA964245C75C800D33306 /* LaunchScreen.storyboard */,
 				F4BCA967245C75C800D33306 /* Info.plist */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F46A5B79245F0B31002F7BE3 /* SecondViewController.swift in Sources */,
 				F4BCA95E245C75C700D33306 /* ViewController.swift in Sources */,
 				F4BCA95A245C75C700D33306 /* AppDelegate.swift in Sources */,
 				F4BCA95C245C75C700D33306 /* SceneDelegate.swift in Sources */,

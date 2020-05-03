@@ -11,6 +11,26 @@ import UIKit // core network for any iOS application
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    /* Multiple Scene
+     1. Create a new View Controller scene
+     2. Add new class to the project: SecondViewController with inherit from UIViewController
+     3. connect the firs scene with the second
+     
+     click on view controller > Library ('+') > drag and drop 'View Controller' inside Mian.board (main)
+     
+     Create new swit class for new scene
+     File > new > File.. > Cocoa Touch Class > Name: 'SecondViewClass', Subclas of: 'UIViewController' > create
+     
+     Connect new View Controller Scene (.storyboard) to SecondViewScene
+     Main.storyboard > click on new View Controller Scene > Show Inspectors > click identity inspector > class: Second View Controller
+     
+     Connect scenes
+     1. Add button on first scene
+     2. ctrl + drag drop on second scene
+     3. Action schow
+     */
+    
+    
     let dailyTasks = ["AAAAA", "BBBBB", "CCCCC", "DDDDD", "FFFFFFF", "GGGGGGG"]
     let weeklyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     let monthlyTasks = ["AAAAA", "BBBBB", "CCCCC"]

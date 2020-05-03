@@ -65,8 +65,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fm6-vF-sej">
+                                <rect key="frame" x="269" y="617" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New scene &gt;"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLD-rV-myw">
+                                <rect key="frame" x="269" y="617" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New scene &gt;"/>
+                                <connections>
+                                    <segue destination="waO-CE-Xyd" kind="show" id="fu4-Jt-oqE"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.57496815072682395" green="0.71708382659369929" blue="0.96130555868148804" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -83,6 +96,22 @@
                 </label>
             </objects>
             <point key="canvasLocation" x="-415" y="-309"/>
+        </scene>
+        <!--Second View Controller-->
+        <scene sceneID="mbN-h0-E2h">
+            <objects>
+                <viewController id="waO-CE-Xyd" customClass="SecondViewController" customModule="The_Night_Porter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="rxs-UJ-SHg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.92133218050003052" green="0.43120549689209503" blue="0.35648941467865292" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="qnr-pj-ZW1"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="928-jE-tw4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iud-D2-JNv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="-310"/>
         </scene>
     </scenes>
 </document>
