@@ -63,7 +63,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         */
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
+        
+        /*
+         Image on the left of the cell.
+         Assets.xcassets > '+' > drag and drop 3 same images with different size (1, 2x, 3x) iOS select automatically the best size. Doble click on the set name and rename with 'clock'
+         */
+        cell.imageView?.image = UIImage.init(named: "clock")
+        
+        // Accessory on the right of the cell
+        cell.accessoryType = .disclosureIndicator // its a enumeration we can use .nameOfType
     
+        /*
+        Default cell style do not show detail label
+            Main.storyboard > click on TableView/normalCell > Atributes inspector > style > Subtitle
+         */
+        cell.detailTextLabel?.text = "Detail text label"
+        
         switch indexPath.section {
         case 0:
             cell.textLabel?.text = dailyTasks[indexPath.row] // '?' because default cell does have textLabel but it is defined as optiona, so we use '?' to unwrap
