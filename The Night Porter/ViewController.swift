@@ -173,7 +173,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      File > new > File.. > Cocoa Touch Class > Name: 'SecondViewClass', Subclas of: 'UIViewController' > create
      
      Connect new View Controller Scene (.storyboard) to SecondViewScene
-     Main.storyboard > click on new View Controller Scene > Show Inspectors > click identity inspector > class: Second View Controller
+     Main.storyboard > click on new View Controller Scene > Show Inspectors (top right) > click identity inspector > class: Second View Controller
      
      Connect scenes
      1. Add button on first scene
@@ -225,7 +225,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      4. ctrl + drag Text View on the right "Trailing"
      5. ctrl + drag Text View on the Label "Vertical Baseline"
      6. ctrl + drag Text View on his self "Horizontal" 
+
+     Edit/Delete Contraints
+     1. Select an Object View
+     2. On the right bar click on the "Size inspector"
+     3. Select the constrain and Edit or delete
      
+     Easy way to create constraints
+     1. Select an Object View
+     2 Select "add new constraints" on the bottom right
+     3. Select red line to add constraints
+     
+     Use Sugested Constraints
+     1. Select "View" on the right bar
+     2. Select "Resolve Auto Layout Issue" on the buttom right
+     3. Reset to suggested constraints
+     
+     Resaze Image with Constraints
+     1. Select image
+     2. click on "Add new constraints" (bottom right)
+     3. add constrain on heigh and width
+     
+     */
+    
+    /*
+     Stack View
+     take two or more view object and then stack them either horizontally or vertically. Stack view it is NOT an alternative to Table View Object.
+     
+     Select two or more items > Editor > Embeded In > Stack View
      */
 }
 
