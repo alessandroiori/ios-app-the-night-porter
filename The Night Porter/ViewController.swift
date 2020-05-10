@@ -208,5 +208,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      Click on the tab bar of the third scene > Select Image and
      
      */
+    
+    /*
+     Constraints
+     Rules/Relatiopnship between two piecies of our user interface, two view object.
+     eg. buton position fixed on the top right corner at the same distance for every iPhone screen size
+     
+     Hold ctrl + drag button view element to the right on the brackground > "Trailing space to safe area"
+     
+     Constraints object are list in the left side below "Constraints"
+     
+     Add constrain between view object like Label View (title) and Text View:
+     1. ctrl + drag Label on the top "Top space.."
+     2. ctrl + drag Label on the top "Center Horizo.."
+     3. ctrl + drag Text View on left "Leading.."
+     4. ctrl + drag Text View on the right "Trailing"
+     5. ctrl + drag Text View on the Label "Vertical Baseline"
+     6. ctrl + drag Text View on his self "Horizontal" 
+     
+     */
 }
 
