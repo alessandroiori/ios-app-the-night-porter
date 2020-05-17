@@ -254,5 +254,43 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      
      Select two or more items > Editor > Embeded In > Stack View
      */
+    
+    /*
+     Traits
+     - width
+     - height
+     - device family
+     - color gamut
+     
+     "Vary Traits" button on the bottom right side: alow trait variation for our storiboard for a specific iOS device.
+     
+     "Vart for Traits" > Height and Width options
+    
+     Size Class to describe height and width (no pixels, no points)
+     Size Class define groups of devices with similar characteristics (same resolution or screen size)
+     For each device, one size class describe width and one size class describe height.
+     
+     iOS Size Class: regular or compact
+     Each iOS device everytime have a regular or compact Size Class for the height ant the same for the width.
+     
+     iPhones:
+     - portrait mode: regular height and compact width
+     - landscape mmode: compact height and compact width
+     
+     iPhones Plus:
+     - portrait mode: regular height and compact width
+     - landscape mmode: compact height and regular width
+     
+     "(wC hR)" on the bottom lefth of the story board means: width compact, heiiight regular
+     
+     Make a customization for specific Size Class:
+     1. view the storyboard in the width and height class you want customize
+     2. click "Vary for Traits" button > select Size Class width or height > eg. if we select widht, customization is only for selected Size Class width on all View iphones/ipad in landscape mode
+     
+     It is possible customizate all objects view, eg. in landscape mode we want change image size and position, change background color and font size, show view object that in portrain mode is hiden
+     
+     Selecting "Vary for Traits" > height and width, with blue bar it is possible change properties for a specific view object: remove Constraints for a specific object and the object itself, so in the specif Size Class combination the view object is hiden while in other size class combination, the object view is shown.
+     
+     */
 }
 
