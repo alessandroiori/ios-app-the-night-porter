@@ -291,6 +291,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      
      Selecting "Vary for Traits" > height and width, with blue bar it is possible change properties for a specific view object: remove Constraints for a specific object and the object itself, so in the specif Size Class combination the view object is hiden while in other size class combination, the object view is shown.
      
+     Customize specific View Object
+     1. select view object
+     2. Show attributes Inspector on the right side bar
+     3. eg. change font size for height and width compact (wC hC) > click on the '+' button next the Font > Add Variation > select font size
+     
      */
 }
 
