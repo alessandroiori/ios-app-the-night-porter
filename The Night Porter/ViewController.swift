@@ -32,6 +32,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     // Table View Data Source Methods
     func numberOfSections(in tableView: UITableView) -> Int {
+        
+        tableView.backgroundColor = UIColor.clear //remove color from table wiew background
          return 3 // one for dayly, one weekly and one for monthly
     }
     
@@ -90,6 +92,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.textLabel?.text = "Error "
         }
         
+        cell.backgroundColor = UIColor.clear; //remove color backfround from cell
+        
         return cell
     }
     
@@ -119,8 +123,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      . 'weak' attribute beacouse this label object it's not own by the ViewController class, we are non responsable to instantiating the label object and taking care of its lifecicle. Label object it's instantiate by .storyboard and it owns the lifecicle. We need just a reference to give a name (modelLabel)
      . '!' optional
      */
-    @IBOutlet weak var modeLabel: UILabel!
     
+    
+    /*
+     
+     @IBOutlet weak var modeLabel: UILabel!
+     
     //Action: from .storyboard to code (XCODE method)
     @IBAction func changeBackground(_ sender: Any) {
        
@@ -142,23 +150,43 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
         
-        /*
+        
         // compact way
-        let UILabelOnly = view.subviews
-            .filter { $0 is UILabel } // is it a label? (not button)
-            .map { $0 as! UILabel} // downcast as UILabel from UIView
-        
-        for label in UILabelOnly {
-            label.textColor = UIColor.lightGray
-        }
-        */
-        
+        //let UILabelOnly = view.subviews
+        //    .filter { $0 is UILabel } // is it a label? (not button)
+        //    .map { $0 as! UILabel} // downcast as UILabel from UIView
+        //
+        //for label in UILabelOnly {
+        //    label.textColor = UIColor.lightGray
+        //}
     }
     
+ */
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         self.title = "First VC"
+    }
+    
+    /*
+     Added Toolbar with a swich inside
+     ctrl + drag and drop here
+     */
+    
+    @IBOutlet weak var darkModeLabel: UIBarButtonItem!
+    
+    @IBAction func togleDarkMode(_ sender: Any) {
+        let mySwitch = sender as! UISwitch
+        
+        if(mySwitch.isOn)
+        {
+            darkModeLabel.isEnabled = true;
+            view.backgroundColor = UIColor.darkGray
+            
+        } else {
+            darkModeLabel.isEnabled = false;
+            view.backgroundColor = UIColor.white
+        }
     }
     
     /*
