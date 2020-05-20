@@ -17,6 +17,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let monthlyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     */
     
+    let dailyTasks = [
+        Task(name: "AAAAA", type: TaskType.daily, completed: false, lastCompleted: nil),
+        Task(name: "BBBBB", type: TaskType.daily, completed: false, lastCompleted: nil),
+        Task(name: "CCCCC", type: TaskType.daily, completed: true, lastCompleted: nil),
+        Task(name: "DDDDD", type: TaskType.daily, completed: false, lastCompleted: nil),
+        Task(name: "EEEEE", type: TaskType.daily, completed: false, lastCompleted: nil),
+        Task(name: "FFFFF", type: TaskType.daily, completed: false, lastCompleted: nil),
+    ]
+    
+    let weeklyTasks = [
+        Task(name: "AAAAA", type: TaskType.weekly, completed: false, lastCompleted: nil),
+        Task(name: "BBBBB", type: TaskType.weekly, completed: false, lastCompleted: nil),
+        Task(name: "CCCCC", type: TaskType.weekly, completed: false, lastCompleted: nil),
+    ]
+    
+    let monthlyTasks = [
+        Task(name: "AAAAA", type: TaskType.monthly, completed: false, lastCompleted: nil),
+        Task(name: "BBBBB", type: TaskType.monthly, completed: false, lastCompleted: nil),
+        Task(name: "CCCCC", type: TaskType.monthly, completed: false, lastCompleted: nil),
+    ]
     /*
      iOS Table View
      . it is a view object
@@ -83,19 +103,34 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
          */
         cell.detailTextLabel?.text = "Detail text label"
         
+        var currentTask: Task!
+        
         switch indexPath.section {
         case 0:
-            cell.textLabel?.text = dailyTasks[indexPath.row] // '?' because default cell does have textLabel but it is defined as optiona, so we use '?' to unwrap
+            //cell.textLabel?.text = dailyTasks[indexPath.row] // '?' because default cell does have textLabel but it is defined as optiona, so we use '?' to unwrap
+            currentTask = dailyTasks[indexPath.row]
         case 1:
-            cell.textLabel?.text = weeklyTasks[indexPath.row]
+            //cell.textLabel?.text = weeklyTasks[indexPath.row]
+            currentTask = weeklyTasks[indexPath.row]
         case 2:
-            cell.textLabel?.text = monthlyTasks[indexPath.row]
+            //cell.textLabel?.text = monthlyTasks[indexPath.row]
+            currentTask = monthlyTasks[indexPath.row]
         default:
-            cell.textLabel?.text = "Error "
+            //cell.textLabel?.text = "Error "
+            break;
         }
         
-        cell.backgroundColor = UIColor.clear; //remove color backfround from cell
+        cell.textLabel?.text = currentTask.name
         
+        if currentTask.completed
+        {
+            cell.backgroundColor = UIColor.green
+            cell.accessoryType = .checkmark
+        } else {
+            cell.backgroundColor = UIColor.clear; //remove color backfround from cell
+            // cell.accessoryType = .none
+        }
+    
         return cell
     }
     
