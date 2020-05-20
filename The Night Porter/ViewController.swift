@@ -11,9 +11,11 @@ import UIKit // core network for any iOS application
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    /*
     let dailyTasks = ["AAAAA", "BBBBB", "CCCCC", "DDDDD", "FFFFFFF", "GGGGGGG"]
     let weeklyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     let monthlyTasks = ["AAAAA", "BBBBB", "CCCCC"]
+    */
     
     /*
      iOS Table View

@@ -12,18 +12,18 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="The_Night_Porter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mLd-Hi-MFq">
-                                <rect key="frame" x="-4" y="32" width="671" height="343"/>
+                                <rect key="frame" x="-8" y="44" width="383" height="623"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="normalCell" textLabel="t43-bS-cFK" detailTextLabel="NGF-qt-Tc0" style="IBUITableViewCellStyleSubtitle" id="jtk-Jq-iPc">
-                                        <rect key="frame" x="0.0" y="55.5" width="671" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="383" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jtk-Jq-iPc" id="mgg-Jo-V5L">
-                                            <rect key="frame" x="0.0" y="0.0" width="671" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t43-bS-cFK">
@@ -50,12 +50,12 @@
                                 </connections>
                             </tableView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb8-UB-x9p">
-                                <rect key="frame" x="0.0" y="343" width="667" height="32"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
                                     <barButtonItem enabled="NO" title="Dark mode" id="EGR-Sl-gm0"/>
                                     <barButtonItem style="plain" id="7yj-Oy-NfC">
                                         <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hx8-zf-YBi">
-                                            <rect key="frame" x="115" y="0.5" width="51" height="31"/>
+                                            <rect key="frame" x="111" y="6.5" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -66,7 +66,7 @@
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="26E-l6-DqO"/>
                                     <barButtonItem style="plain" id="JcS-FB-yk2">
                                         <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hLD-rV-myw">
-                                            <rect key="frame" x="557" y="1" width="90" height="30"/>
+                                            <rect key="frame" x="269" y="7" width="90" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" title="New scene &gt;"/>
                                             <connections>
@@ -336,9 +336,9 @@
                                 <exclude reference="8WS-m5-rRJ"/>
                                 <exclude reference="Z5T-LC-qFI"/>
                                 <exclude reference="ZfF-zy-ONs"/>
-                                <exclude reference="iML-m4-oOb"/>
                                 <exclude reference="6IA-qh-wfs"/>
                                 <exclude reference="J9i-N8-Wgv"/>
+                                <exclude reference="iML-m4-oOb"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=compact-widthClass=compact">
@@ -353,8 +353,6 @@
                                 <include reference="ZfF-zy-ONs"/>
                                 <exclude reference="f0y-sa-Vzt"/>
                                 <exclude reference="hIh-cG-ma3"/>
-                                <include reference="iML-m4-oOb"/>
-                                <exclude reference="j8L-tc-t6p"/>
                                 <include reference="6IA-qh-wfs"/>
                                 <include reference="J9i-N8-Wgv"/>
                                 <exclude reference="QJf-au-ff1"/>
@@ -362,6 +360,8 @@
                                 <exclude reference="Wfa-CI-xdv"/>
                                 <exclude reference="ntB-vk-BWv"/>
                                 <exclude reference="sZa-m9-fCm"/>
+                                <include reference="iML-m4-oOb"/>
+                                <exclude reference="j8L-tc-t6p"/>
                             </mask>
                         </variation>
                     </view>
