@@ -185,24 +185,42 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
-    
-    
     @IBAction func resetList(_ sender: Any) {
         
-        for i in 0..<self.dailyTasks.count {
-            self.dailyTasks[i].completed = false
+        // controller on reset
+        let confirm = UIAlertController(title: "Are you shure?", message: "Really reset the list?", preferredStyle: .alert)
+        
+        // yes action, style .destructive becouse we want delete data, handler is a closure
+        let yesAction = UIAlertAction(title: "Yes", style: .destructive) {
+            action in
+            
+            for i in 0..<self.dailyTasks.count {
+                self.dailyTasks[i].completed = false
+            }
+            
+            for i in 0..<self.weeklyTasks.count {
+               self.weeklyTasks[i].completed = false
+            }
+            
+            for i in 0..<self.monthlyTasks.count {
+               self.monthlyTasks[i].completed = false
+            }
+            
+            // We must reloadData of table view. ResetList is not a TableView delegate method, so we do not have a reference of Table View, we must create table view reference: drag and drop Table View from left inside ViewController.swift code
+            self.taskTableView.reloadData()
         }
         
-        for i in 0..<self.weeklyTasks.count {
-           self.weeklyTasks[i].completed = false
+        let noAction = UIAlertAction(title: "No", style: .cancel) {
+            action in
+            print("That was a close one!")
         }
         
-        for i in 0..<self.monthlyTasks.count {
-           self.monthlyTasks[i].completed = false
-        }
+        //add action to alert controller
+        confirm.addAction(yesAction)
+        confirm.addAction(noAction)
         
-        // We must reloadData of table view. ResetList is not a TableView delegate method, so we do not have a reference of Table View, we must create table view reference: drag and drop Table View from left inside ViewController.swift code
-        taskTableView.reloadData()
+        // show alert controller
+        present(confirm, animated: true, completion: nil)
     }
     
     /*
