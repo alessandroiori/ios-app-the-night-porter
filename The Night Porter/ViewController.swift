@@ -17,7 +17,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     let monthlyTasks = ["AAAAA", "BBBBB", "CCCCC"]
     */
     
-    let dailyTasks = [
+    var dailyTasks = [
         Task(name: "AAAAA", type: TaskType.daily, completed: false, lastCompleted: nil),
         Task(name: "BBBBB", type: TaskType.daily, completed: false, lastCompleted: nil),
         Task(name: "CCCCC", type: TaskType.daily, completed: true, lastCompleted: nil),
@@ -26,13 +26,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         Task(name: "FFFFF", type: TaskType.daily, completed: false, lastCompleted: nil),
     ]
     
-    let weeklyTasks = [
+    var weeklyTasks = [
         Task(name: "AAAAA", type: TaskType.weekly, completed: false, lastCompleted: nil),
         Task(name: "BBBBB", type: TaskType.weekly, completed: false, lastCompleted: nil),
         Task(name: "CCCCC", type: TaskType.weekly, completed: false, lastCompleted: nil),
     ]
     
-    let monthlyTasks = [
+    var monthlyTasks = [
         Task(name: "AAAAA", type: TaskType.monthly, completed: false, lastCompleted: nil),
         Task(name: "BBBBB", type: TaskType.monthly, completed: false, lastCompleted: nil),
         Task(name: "CCCCC", type: TaskType.monthly, completed: false, lastCompleted: nil),
@@ -50,6 +50,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     // Table View Delegate Methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("Selected section: \(indexPath.section), row: \(indexPath.row)")
+    }
+    
+    /*
+     leadingSwipeAction swipe from left to right
+     trailingSwipeAction swipe from right to left
+     */
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        /*
+         - stile is an enumeration, .descrutive generate a red button used for delete data , with .normal the button is gray
+         - title, what the button say
+         - handler, a closure (lambda action) with 3 parameters:
+            1. information about the action, UIContextualAction
+            2. view where the action was call from: UIView
+            3. completion action: Bool, a way to say "were we able to accomplish this action?"
+         
+         */
+        let completeAction = UIContextualAction(style: .normal, title: "Complete") { (action: UIContextualAction, sourceView: UIView, actionPerformed:(Bool) -> Void) in
+            switch indexPath.section {
+            case 0:
+                self.dailyTasks[indexPath.row].completed = true
+            case 1:
+                self.weeklyTasks[indexPath.row].completed = true
+            case 2:
+                self.monthlyTasks[indexPath.row].completed = true
+            default:
+                break;
+            }
+            
+            tableView.reloadData()
+            actionPerformed(true) // we just say to iOS "the button can go away now"
+        }
+        return UISwipeActionsConfiguration(actions: [completeAction]) // it is possible add more actions in actions array parameter
     }
     
     // Table View Data Source Methods
@@ -87,21 +120,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         */
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "normalCell", for: indexPath)
-        
-        /*
-         Image on the left of the cell.
-         Assets.xcassets > '+' > drag and drop 3 same images with different size (1, 2x, 3x) iOS select automatically the best size. Doble click on the set name and rename with 'clock'
-         */
-        cell.imageView?.image = UIImage.init(named: "clock")
-        
-        // Accessory on the right of the cell
-        cell.accessoryType = .disclosureIndicator // its a enumeration we can use .nameOfType
-    
-        /*
-        Default cell style do not show detail label
-            Main.storyboard > click on TableView/normalCell > Atributes inspector > style > Subtitle
-         */
-        cell.detailTextLabel?.text = "Detail text label"
+
         
         var currentTask: Task!
         
@@ -120,15 +139,30 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             break;
         }
         
+        /*
+         Image on the left of the cell.
+         Assets.xcassets > '+' > drag and drop 3 same images with different size (1, 2x, 3x) iOS select automatically the best size. Doble click on the set name and rename with 'clock'
+         */
+        cell.imageView?.image = UIImage.init(named: "clock")
+        /*
+        Default cell style do not show detail label
+            Main.storyboard > click on TableView/normalCell > Atributes inspector > style > Subtitle
+         */
         cell.textLabel?.text = currentTask.name
+        cell.detailTextLabel?.text = "Detail text label"
+        
+        // Accessory on the right of the cell
+        //cell.accessoryType = .disclosureIndicator // its a enumeration we can use .nameOfType
         
         if currentTask.completed
         {
             cell.backgroundColor = UIColor.green
+            cell.textLabel?.isEnabled = false
+            cell.detailTextLabel?.isEnabled = false
             cell.accessoryType = .checkmark
         } else {
             cell.backgroundColor = UIColor.clear; //remove color backfround from cell
-            // cell.accessoryType = .none
+            cell.accessoryType = .none
         }
     
         return cell
