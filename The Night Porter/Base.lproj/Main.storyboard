@@ -16,14 +16,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="mLd-Hi-MFq">
-                                <rect key="frame" x="-8" y="44" width="383" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="normalCell" textLabel="t43-bS-cFK" detailTextLabel="NGF-qt-Tc0" style="IBUITableViewCellStyleSubtitle" id="jtk-Jq-iPc">
-                                        <rect key="frame" x="0.0" y="55.5" width="383" height="55.5"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="55.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jtk-Jq-iPc" id="mgg-Jo-V5L">
-                                            <rect key="frame" x="0.0" y="0.0" width="383" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="t43-bS-cFK">
@@ -52,10 +52,16 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qb8-UB-x9p">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
+                                    <barButtonItem title="Reset list" id="iQm-1w-kUZ">
+                                        <connections>
+                                            <action selector="resetList:" destination="BYZ-38-t0r" id="IEu-1J-vHV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="26E-l6-DqO"/>
                                     <barButtonItem enabled="NO" title="Dark mode" id="EGR-Sl-gm0"/>
                                     <barButtonItem style="plain" id="7yj-Oy-NfC">
                                         <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="hx8-zf-YBi">
-                                            <rect key="frame" x="111" y="6.5" width="51" height="31"/>
+                                            <rect key="frame" x="308" y="6.5" width="51" height="31"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="onTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <connections>
@@ -63,35 +69,36 @@
                                             </connections>
                                         </switch>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="26E-l6-DqO"/>
-                                    <barButtonItem style="plain" id="JcS-FB-yk2">
-                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hLD-rV-myw">
-                                            <rect key="frame" x="269" y="7" width="90" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="New scene &gt;"/>
-                                            <connections>
-                                                <segue destination="waO-CE-Xyd" kind="show" id="fu4-Jt-oqE"/>
-                                            </connections>
-                                        </button>
-                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="bottom" secondItem="qb8-UB-x9p" secondAttribute="bottom" id="4jq-Rl-plO"/>
-                            <constraint firstItem="qb8-UB-x9p" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bsc-RW-QWd"/>
-                            <constraint firstItem="qb8-UB-x9p" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Grc-VL-vra"/>
-                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-24" id="l9e-NR-2oA"/>
-                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="nGQ-gY-9zi"/>
-                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="trailing" secondItem="qb8-UB-x9p" secondAttribute="trailing" id="vLx-4P-nId"/>
-                            <constraint firstItem="qb8-UB-x9p" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="w4I-eq-NZ2"/>
+                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="09D-Qa-aaZ"/>
+                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="leading" secondItem="qb8-UB-x9p" secondAttribute="leading" id="DLy-Jd-cBB"/>
+                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="UAF-nJ-hK4"/>
+                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="trailing" secondItem="qb8-UB-x9p" secondAttribute="trailing" id="iOe-Gf-fLP"/>
+                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="kke-XH-GZO"/>
+                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="bottom" secondItem="qb8-UB-x9p" secondAttribute="bottom" id="pWo-Ab-itL"/>
+                            <constraint firstItem="mLd-Hi-MFq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qoT-6I-7X1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KK2-Ab-SLd"/>
+                    <navigationItem key="navigationItem" id="KK2-Ab-SLd">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="JcS-FB-yk2">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hLD-rV-myw">
+                                <rect key="frame" x="269" y="7" width="90" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="New scene &gt;"/>
+                                <connections>
+                                    <segue destination="waO-CE-Xyd" kind="show" id="fu4-Jt-oqE"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="darkModeLabel" destination="EGR-Sl-gm0" id="dnA-BC-EOl"/>
+                        <outlet property="taskTableView" destination="mLd-Hi-MFq" id="zLB-Os-LVH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

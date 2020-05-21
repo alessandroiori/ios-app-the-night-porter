@@ -11,6 +11,8 @@ import UIKit // core network for any iOS application
 // View is anything that is cabable of drawing itself in a rectangular region on iOS screen. View object: Label, button, img, bar ecc
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    @IBOutlet weak var taskTableView: UITableView!
+    
     /*
     let dailyTasks = ["AAAAA", "BBBBB", "CCCCC", "DDDDD", "FFFFFFF", "GGGGGGG"]
     let weeklyTasks = ["AAAAA", "BBBBB", "CCCCC"]
@@ -162,6 +164,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             cell.accessoryType = .checkmark
         } else {
             cell.backgroundColor = UIColor.clear; //remove color backfround from cell
+            cell.textLabel?.isEnabled = true
+            cell.detailTextLabel?.isEnabled = true
             cell.accessoryType = .none
         }
     
@@ -181,6 +185,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
     }
 
+    
+    
+    @IBAction func resetList(_ sender: Any) {
+        
+        for i in 0..<self.dailyTasks.count {
+            self.dailyTasks[i].completed = false
+        }
+        
+        for i in 0..<self.weeklyTasks.count {
+           self.weeklyTasks[i].completed = false
+        }
+        
+        for i in 0..<self.monthlyTasks.count {
+           self.monthlyTasks[i].completed = false
+        }
+        
+        // We must reloadData of table view. ResetList is not a TableView delegate method, so we do not have a reference of Table View, we must create table view reference: drag and drop Table View from left inside ViewController.swift code
+        taskTableView.reloadData()
+    }
+    
     /*
      MVC
      Model (data)
