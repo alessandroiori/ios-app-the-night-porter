@@ -438,5 +438,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
      3. eg. change font size for height and width compact (wC hC) > click on the '+' button next the Font > Add Variation > select font size
      
      */
+    
+    /*
+     Lauch Screen
+     LauchScreen.storyboard
+     
+     It is used firt time app is opened.
+     Same content of ViewController but without text.
+     */
 }
 
