@@ -188,7 +188,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBAction func resetList(_ sender: Any) {
         
         // controller on reset
-        let confirm = UIAlertController(title: "Are you shure?", message: "Really reset the list?", preferredStyle: .alert)
+        let confirm = UIAlertController(title: "Are you sure?", message: "Really reset the list?", preferredStyle: .alert)
         
         // yes action, style .destructive becouse we want delete data, handler is a closure
         let yesAction = UIAlertAction(title: "Yes", style: .destructive) {
@@ -298,7 +298,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
         } else {
             darkModeLabel.isEnabled = false;
-            view.backgroundColor = UIColor.white
+            view.backgroundColor = UIColor.lightGray
         }
     }
     

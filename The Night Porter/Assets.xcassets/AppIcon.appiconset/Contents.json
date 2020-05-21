@@ -6,7 +6,7 @@
       "size" : "20x20"
     },
     {
-      "filename" : "clock@2x.png",
+      "filename" : "dog.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "20x20"
@@ -32,11 +32,13 @@
       "size" : "40x40"
     },
     {
+      "filename" : "dog@2x.png",
       "idiom" : "iphone",
       "scale" : "2x",
       "size" : "60x60"
     },
     {
+      "filename" : "dog@3x.png",
       "idiom" : "iphone",
       "scale" : "3x",
       "size" : "60x60"
